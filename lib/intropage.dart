@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:xylophone/constants.dart';
 import 'package:xylophone/homepage.dart';
-
 import 'IntroPages/Page2.dart';
 import 'IntroPages/Page3.dart';
 import 'IntroPages/page1.dart';
@@ -37,7 +35,6 @@ class _IntroPageState extends State<IntroPage> {
             ],
           ),
           Container(
-            color: bgcolor,
             alignment: Alignment(0,0.75),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
