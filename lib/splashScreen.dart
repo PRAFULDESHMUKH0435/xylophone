@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
               height: 200,
               child:Lottie.asset('assets/animations/anim_1.json'),
             ),
-            Text('Xylophone App',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
+            Text('Xylophone ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
           ],
         ),
       ),

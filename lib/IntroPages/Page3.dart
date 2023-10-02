@@ -6,6 +6,7 @@ class Page3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.orange,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -15,7 +16,7 @@ class Page3 extends StatelessWidget {
               height: 200,
               child:Lottie.asset('assets/animations/anim_1.json'),
             ),
-            Text('Xylophone App',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
+            Text('“Music is the strongest form of magic.”',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
           ],
         ),
       ),

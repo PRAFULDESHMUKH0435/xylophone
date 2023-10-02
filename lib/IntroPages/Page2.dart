@@ -6,6 +6,7 @@ class Page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.yellow,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -15,7 +16,7 @@ class Page2 extends StatelessWidget {
               height: 200,
               child:Lottie.asset('assets/animations/anim_2.json'),
             ),
-            Text('Xylophone App',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
+            Text('“Where words leave off, music begins.”',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
           ],
         ),
       ),
