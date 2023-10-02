@@ -11,34 +11,39 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Xylophone',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+        title: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: Text('Xylophone',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)),
         actions: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.only(right: 20.0),
             child: CircleAvatar(
-              radius: 30,
+              radius: 18,
               child: Image.network('https://cdn-icons-png.flaticon.com/512/25/25231.png'),
             ),
           )
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            BuildXylo(Colors.purple),
-            BuildXylo(Colors.indigo),
-            BuildXylo(Colors.blue),
-            BuildXylo(Colors.green),
-            BuildXylo(Colors.yellow),
-            BuildXylo(Colors.orange),
-            BuildXylo(Colors.red),
-            BuildXylo(Colors.purple),
-            BuildXylo(Colors.indigo),
-            BuildXylo(Colors.blue),
-          ],
+        body: Center(
+          child: ListView(
+              children: [
+                BuildXylo(Colors.purpleAccent),
+                BuildXylo(Colors.indigo),
+                BuildXylo(Colors.blue),
+                BuildXylo(Colors.green),
+                BuildXylo(Colors.yellow),
+                BuildXylo(Colors.orange),
+                BuildXylo(Colors.red),
+                BuildXylo(Colors.purpleAccent),
+                BuildXylo(Colors.indigo),
+                BuildXylo(Colors.blue),
+                BuildXylo(Colors.green),
+                BuildXylo(Colors.yellow),
+                BuildXylo(Colors.orange),
+                BuildXylo(Colors.red),
+              ],
+          ),
         ),
-      ),
     );
   }
 
@@ -46,11 +51,11 @@ class _HomePageState extends State<HomePage> {
     return Expanded(
       child: InkWell(
         onTap: (){
-          ShowSnackBar();
+          SnackBar(content: Text('Hi'),);
         },
         child: Container(
-          margin: EdgeInsets.all(10.0),
-          height: 35,
+          margin: EdgeInsets.all( 10.0),
+          height: 50,
           color: xycolor,
         ),
       ),
