@@ -58,7 +58,6 @@ class _HomePageState extends State<HomePage> {
             player.play(AssetSource(sound));
             sec--;
           }
-
         },
         child: Container(
           margin: EdgeInsets.all( 10.0),
