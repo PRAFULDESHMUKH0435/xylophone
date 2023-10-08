@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -27,31 +28,37 @@ class _HomePageState extends State<HomePage> {
         body: Center(
           child: ListView(
               children: [
-                BuildXylo(Colors.purpleAccent),
-                BuildXylo(Colors.indigo),
-                BuildXylo(Colors.blue),
-                BuildXylo(Colors.green),
-                BuildXylo(Colors.yellow),
-                BuildXylo(Colors.orange),
-                BuildXylo(Colors.red),
-                BuildXylo(Colors.purpleAccent),
-                BuildXylo(Colors.indigo),
-                BuildXylo(Colors.blue),
-                BuildXylo(Colors.green),
-                BuildXylo(Colors.yellow),
-                BuildXylo(Colors.orange),
-                BuildXylo(Colors.red),
+                BuildXylo(Colors.purpleAccent,'sounds/sound_1.mp3'),
+                BuildXylo(Colors.indigo,'sounds/sound_2.mp3'),
+                BuildXylo(Colors.blue,'sounds/sound_3.mp3'),
+                BuildXylo(Colors.green,'sounds/sound_4.mp3'),
+                BuildXylo(Colors.yellow,'sounds/sound_5.mp3'),
+                BuildXylo(Colors.orange,'sounds/sound_6.mp3'),
+                BuildXylo(Colors.red,'sounds/sound_7.mp3'),
+                BuildXylo(Colors.purpleAccent,'sounds/sound_1.mp3'),
+                BuildXylo(Colors.indigo,'sounds/sound_2.mp3'),
+                BuildXylo(Colors.blue,'sounds/sound_3.mp3'),
+                BuildXylo(Colors.green,'sounds/sound_4.mp3'),
+                BuildXylo(Colors.yellow,'sounds/sound_5.mp3'),
+                BuildXylo(Colors.orange,'sounds/sound_6.mp3'),
+                BuildXylo(Colors.red,'sounds/sound_7.mp3'),
               ],
           ),
         ),
     );
   }
 
-  Widget BuildXylo(Color xycolor){
+  Widget BuildXylo(Color xycolor,String sound){
     return Expanded(
       child: InkWell(
         onTap: (){
-          SnackBar(content: Text('Hi'),);
+          int sec =5;
+          while(sec>0){
+            final player = AudioPlayer();
+            player.play(AssetSource(sound));
+            sec--;
+          }
+
         },
         child: Container(
           margin: EdgeInsets.all( 10.0),
