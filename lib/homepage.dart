@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 class HomePage extends StatefulWidget {
@@ -36,15 +38,7 @@ class _HomePageState extends State<HomePage> {
           title: const Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.0),
               child: Text('Xylophone',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 20.0),
-              child: CircleAvatar(
-                radius: 18,
-                child: Image.network('https://cdn-icons-png.flaticon.com/512/25/25231.png'),
-              ),
-            )
-          ],
+
         ),
           body: Center(
             child: ListView(
@@ -70,16 +64,16 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+
   Widget BuildXylo(Color xycolor,String sound){
     return Expanded(
       child: InkWell(
         onTap: (){
-          int sec =5;
-          while(sec>0){
-            final player = AudioPlayer();
-            player.play(AssetSource(sound));
-            sec--;
-          }
+         final player = AudioPlayer();
+         player.play(AssetSource(sound));
+         Timer(Duration(seconds: 5), () {
+           player.stop();
+         });
         },
         child: Container(
           margin: EdgeInsets.all( 10.0),
@@ -90,17 +84,17 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget ShowSnackBar(){
-    return const SnackBar(
-      duration: Duration(seconds: 5),
-      backgroundColor: Colors.red,
-      content: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-           Icon(Icons.surround_sound,color: Colors.white),
-          Text('Simple SnackBar',style: TextStyle(color: Colors.white),)
-        ],
-      ),
-    );
-  }
+  // Widget ShowSnackBar(){
+  //   return const SnackBar(
+  //     duration: Duration(seconds: 5),
+  //     backgroundColor: Colors.red,
+  //     content: Row(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //          Icon(Icons.surround_sound,color: Colors.white),
+  //         Text('Simple SnackBar',style: TextStyle(color: Colors.white),)
+  //       ],
+  //     ),
+  //   );
+  // }
 }
