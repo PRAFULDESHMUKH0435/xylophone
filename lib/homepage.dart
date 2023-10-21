@@ -83,17 +83,5 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // Widget ShowSnackBar(){
-  //   return const SnackBar(
-  //     duration: Duration(seconds: 5),
-  //     backgroundColor: Colors.red,
-  //     content: Row(
-  //       mainAxisAlignment: MainAxisAlignment.center,
-  //       children: [
-  //          Icon(Icons.surround_sound,color: Colors.white),
-  //         Text('Simple SnackBar',style: TextStyle(color: Colors.white),)
-  //       ],
-  //     ),
-  //   );
-  // }
+
 }
