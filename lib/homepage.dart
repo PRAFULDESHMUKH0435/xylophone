@@ -37,7 +37,6 @@ class _HomePageState extends State<HomePage> {
           title: const Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.0),
               child: Text('Xylophone',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)),
-
         ),
           body: Center(
             child: ListView(
@@ -65,7 +64,8 @@ class _HomePageState extends State<HomePage> {
 
 
   Widget BuildXylo(Color xycolor,String sound){
-    return Expanded(
+    return Container(
+      width: double.infinity,
       child: InkWell(
         onTap: (){
          final player = AudioPlayer();
